@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulare</title>
+</head>
+<body>
+  <form action="">
+    <h2>Anmeldeformular</h2>
+    <fieldset>
+      <legend>Zugangsdaten</legend>
+      <label for="user">Benutzername</label>
+      <input type="text" name="" id="user" required><br>
+      <label for="email">Email</label>
+      <input type="email" name="" id="email" required><br>
+      <label for="pw">Passwort</label>
+      <input type="password" name="" id="pw" required><br>
+    </fieldset>
+    <fieldset>
+      <legend>Infos</legend>
+      <label for="age">Alter</label>
+      <input type="number" id="age"><br>
+      <label for="gender">Geschlecht</label>
+      <select name="" id="gender">
+        <option value="">keine Angabe</option>
+        <option value="">männlich</option>
+        <option value="">weiblich</option>
+        <option value="">divers</option>
+      </select><br>
+      <label for="relation">Familienstand</label>
+      <input type="radio" name="inputgroup1" id="rel1"><label for="rel1">ledig</label>
+      <input type="radio" name="inputgroup1" id="rel2"><label for="rel2">verheiratet</label>
+      <input type="radio" name="inputgroup1" id="rel3"><label for="rel3">es ist kompliziert</label><br>
+      <label for="favcolor">Lieblingsfarbe</label>
+      <input type="color" id="favcolor"><br>
+      <label for="cv">Profilfoto</label>
+      <input type="file" id="cv"><br>
+      Eigenschaften<br>
+      <input type="checkbox" id="hair">
+      <label for="hair">Haare auf den Zähnen</label><br>
+      <input type="checkbox" id="bald">
+      <label for="bald">Glatze</label><br>
+      <input type="checkbox" id="bite">
+      <label for="bite">Überbiss</label><br>
+      <label for="slider"></label>
+      <input type="range" id="range" min="0" max="100" step="1">
+      <output for="range"></output>
+    </fieldset>
+    <button type="submit">Bestätigen</button>
+  </form>
+</body>
+</html>

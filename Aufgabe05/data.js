@@ -38,7 +38,7 @@ var A05;
             category: "places"
         },
         {
-            description: "Dock on a Lake",
+            description: "A Dock on a very peaceful lake.",
             img: "https://i.picsum.photos/id/77/200/200.jpg",
             name: "Dock on a Lake",
             price: 899,

@@ -21,18 +21,18 @@ nav>ul {
   padding: 5px;
 }
 
-nav>ul>li {
+nav>ul>a {
   padding: 10px;
   display: inline-block;
   margin-right: 5px;
   background-color: var(--blue1);
   border-radius: 5px;
+  text-decoration: none;
 }
-nav>ul>li:hover {
+nav>ul>a:hover {
   background-color: var(--blue2);
 }
-nav>ul>li>a {
-  text-decoration: none;
+nav>ul>a>li {
   color: var(--font);
 }
 

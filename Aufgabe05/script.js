@@ -1,6 +1,14 @@
 "use strict";
 var A05;
 (function (A05) {
+    /*
+    ACHTUNG!
+    Bitte bedenken Sie, dass diese Lösung nur eine von vielen möglichen ist!
+  
+    Programmieren ist ein kreativer Prozess mit mehr als einer Lösung.
+    Wir versuchen selbstverständlich Ihnen die beste Balance aus Verständlichkeit, Machbarkeit, Umsetzung etc. zu präsentieren, aber das gelingt nicht immer.
+    Und auch wir sind nur Menschen und machen Gelegentlich mal Fehler. Wenn Sie Fragen zu diesem Beispiel haben, wenden Sie sich gerne an uns.
+    */
     for (let i = 0; i < A05.data.length; i++) {
         let productDiv = document.createElement("div");
         productDiv.classList.add("product");

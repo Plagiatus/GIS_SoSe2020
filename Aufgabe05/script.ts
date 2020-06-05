@@ -1,4 +1,13 @@
 namespace A05 {
+  /*
+  ACHTUNG!
+  Bitte bedenken Sie, dass diese Lösung nur eine von vielen möglichen ist!
+
+  Programmieren ist ein kreativer Prozess mit mehr als einer Lösung.
+  Wir versuchen selbstverständlich Ihnen die beste Balance aus Verständlichkeit, Machbarkeit, Umsetzung etc. zu präsentieren, aber das gelingt nicht immer.
+  Und auch wir sind nur Menschen und machen Gelegentlich mal Fehler. Wenn Sie Fragen zu diesem Beispiel haben, wenden Sie sich gerne an uns.
+  */
+
   for (let i: number = 0; i < data.length; i++) {
     let productDiv: HTMLDivElement = document.createElement("div");
     productDiv.classList.add("product");
@@ -27,7 +36,7 @@ namespace A05 {
     productPrice.innerText = data[i].price.toLocaleString("de-DE", { currency: "EUR", style: "currency" });
     productPrice.classList.add("product-price");
     productDiv.appendChild(productPrice);
-    
+
     //Button
     let productBtn: HTMLButtonElement = document.createElement("button");
     productBtn.innerText = "Buy";

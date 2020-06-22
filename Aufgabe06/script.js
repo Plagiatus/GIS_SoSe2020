@@ -1,6 +1,8 @@
 "use strict";
 var A06;
 (function (A06) {
+    let jsonstring = JSON.stringify(A06.data);
+    console.log(jsonstring);
     /*
     ACHTUNG!
     Bitte bedenken Sie, dass diese Lösung nur eine von vielen möglichen ist!

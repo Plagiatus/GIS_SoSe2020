@@ -1,4 +1,7 @@
 namespace A06 {
+
+  let jsonstring: string = JSON.stringify(data);
+  console.log(jsonstring);
   /*
   ACHTUNG!
   Bitte bedenken Sie, dass diese Lösung nur eine von vielen möglichen ist!

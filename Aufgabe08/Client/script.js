@@ -3,6 +3,7 @@ document.getElementsByTagName("button")[0].addEventListener("click", sendRequest
 async function sendRequest() {
     let url = "https://gis-example.herokuapp.com/";
     let formData = new FormData(document.forms[0]);
+    // tslint:disable-next-line: no-any
     let query = new URLSearchParams(formData);
     url = url + "?" + query.toString();
     let response = await fetch(url);

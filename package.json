@@ -4,7 +4,7 @@
   "description": "Beispielcode für GiS SoSe2020",
   "main": "index.js",
   "scripts": {
-    "start": "node Aufgabe08/Server/server.js"
+    "start": "node Aufgabe09/Server/server.js"
   },
   "repository": {
     "type": "git",

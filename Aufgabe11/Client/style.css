@@ -1,0 +1,74 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  /* font-size: 2rem; */
+}
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  text-align: left;
+  font-size: 2rem;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before,
+.rating > span.selected::before,
+.rating > span.selected ~ span::before {
+  content: "\2605";
+  position: absolute;
+  color: gold;
+}
+.rating > span:hover,
+.rating > span:hover ~ span,
+.rating > span.selected,
+.rating > span.selected ~ span {
+  color: rgba(0,0,0,0);
+}
+/* .rating > span.selected::before,
+.rating > span.selected ~ span::before {
+  color: gold;
+}
+
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+  color: goldenrod;
+} */
+
+#output {
+  display: flex;
+  justify-content: center;
+}
+
+
+.one-feedback {
+  max-width: 300px;
+  text-align: center;
+  border: 1px solid black;
+  padding: 1em;
+  margin: 0.5em;
+}
+
+.one-feedback span {
+  font-size: 2rem;
+  display: inline-block;
+}
+
+.feedback-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: block;
+}
+
+.one-feedback > q {
+  font-style: italic;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  display: block;
+}
+
+.given-stars {
+  color: gold;
+}

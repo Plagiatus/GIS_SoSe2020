@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <title>A11 DB Connection</title>
+</head>
+
+<body>
+  <h1>Feedback Formular</h1>
+  <fieldset>
+
+    <legend>Ihr Feedback</legend>
+    <form action="">
+      <div class="rating">
+        <span rating="5">☆</span><span rating="4">☆</span><span rating="3">☆</span><span rating="2">☆</span><span
+          rating="1">☆</span>
+      </div>
+      <input type="hidden" name="rating" value="-1" id="rating-input">
+      <fieldset>
+        <legend>Name</legend>
+        <input type="text" name="name" id="name-input" required>
+      </fieldset>
+      <fieldset>
+        <legend>Freitext</legend>
+        <textarea name="freetext" id="freetext-input" rows="4" cols="50" required></textarea>
+      </fieldset>
+      <button type="reset" id="submit-btn">Absenden</button>
+    </form>
+  </fieldset>
+  <button id="show-btn">Feedback Anzeigen</button>
+  <div id="output">
+  </div>
+</body>
+
+</html>

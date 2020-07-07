@@ -4,7 +4,7 @@
   "description": "Beispielcode für GiS SoSe2020",
   "main": "index.js",
   "scripts": {
-    "start": "node Aufgabe09/Server/server.js"
+    "start": "node Aufgabe11/Server/server.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/Plagiatus/GIS_SoSe2020#readme",
   "dependencies": {
-    "@types/node": "^14.0.13"
+    "@types/mongodb": "^3.5.25",
+    "@types/node": "^14.0.13",
+    "mongodb": "^3.5.9"
   }
 }

@@ -117,10 +117,10 @@ var A07;
     }
     // Alternative: speichere die Artikel selbst in ein langes Array über JSON strings
     // das braucht natürlich im Cart dann eine andere Verarbeitung, geht aber auch.
-    let articlesInCart = [];
-    function addToCartAlternative(_index) {
-        articlesInCart.push(data[_index]);
-        localStorage.setItem("cart", JSON.stringify(articlesInCart));
-    }
+    // let articlesInCart: Product[] = [];
+    // function addToCartAlternative(_index: number): void {
+    //   articlesInCart.push(data[_index]);
+    //   localStorage.setItem("cart", JSON.stringify(articlesInCart));
+    // }
 })(A07 || (A07 = {}));
 //# sourceMappingURL=script.js.map

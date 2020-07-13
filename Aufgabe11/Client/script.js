@@ -69,6 +69,9 @@ var A11Client;
         removeBtn.innerText = "Löschen";
         removeBtn.addEventListener("click", removeOne);
         feedbackDiv.appendChild(removeBtn);
+        if (isOneOfExampleFeedbacks(_f._id)) {
+            removeBtn.disabled = true;
+        }
         return feedbackDiv;
     }
     function selectRating(_e) {
@@ -85,9 +88,21 @@ var A11Client;
         let clickedButton = _e.target;
         let parentDiv = clickedButton.parentElement;
         let idToRemove = parentDiv.getAttribute("_id");
+        if (isOneOfExampleFeedbacks(idToRemove)) {
+            console.log("No, you can't remove this. Stop messing with the pages code!");
+            return;
+        }
         let response = await fetch(serverURL + "/removeOne?id=" + idToRemove);
         console.log(await response.json());
         findAll(_e);
+    }
+    let protectedIDs = ["5f04564b6cd67d17e07c7f10", "5f048670ff291225a0174c5b", "5f048845ff291225a0174c5d"];
+    function isOneOfExampleFeedbacks(_id) {
+        for (let id of protectedIDs) {
+            if (id == _id)
+                return true;
+        }
+        return false;
     }
 })(A11Client || (A11Client = {}));
 //# sourceMappingURL=script.js.map

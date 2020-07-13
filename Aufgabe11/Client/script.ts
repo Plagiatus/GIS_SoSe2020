@@ -23,9 +23,9 @@ namespace A11Client {
 
   async function insert(_e: Event): Promise<void> {
     let hiddenRatingInput: HTMLInputElement = <HTMLInputElement>document.getElementById("rating-input");
-    if (!document.forms[0].checkValidity() || parseInt(hiddenRatingInput.value) < 0) { 
+    if (!document.forms[0].checkValidity() || parseInt(hiddenRatingInput.value) < 0) {
       _e.preventDefault();
-      return; 
+      return;
     }
     for (let s of starSpans) {
       s.classList.remove("selected");
@@ -84,6 +84,9 @@ namespace A11Client {
     removeBtn.innerText = "Löschen";
     removeBtn.addEventListener("click", removeOne);
     feedbackDiv.appendChild(removeBtn);
+    if (isOneOfExampleFeedbacks(_f._id)) {
+      removeBtn.disabled = true;
+    }
 
     return feedbackDiv;
   }
@@ -100,11 +103,23 @@ namespace A11Client {
   }
 
   async function removeOne(_e: Event): Promise<void> {
-    let clickedButton: HTMLElement = <HTMLElement> _e.target;
-    let parentDiv: HTMLElement = <HTMLElement> clickedButton.parentElement;
+    let clickedButton: HTMLElement = <HTMLElement>_e.target;
+    let parentDiv: HTMLElement = <HTMLElement>clickedButton.parentElement;
     let idToRemove: string = parentDiv.getAttribute("_id")!;
+    if (isOneOfExampleFeedbacks(idToRemove)) {
+      console.log("No, you can't remove this. Stop messing with the pages code!");
+      return;
+    }
     let response: Response = await fetch(serverURL + "/removeOne?id=" + idToRemove);
     console.log(await response.json());
     findAll(_e);
+  }
+
+  let protectedIDs: string[] = ["5f04564b6cd67d17e07c7f10", "5f048670ff291225a0174c5b", "5f048845ff291225a0174c5d"];
+  function isOneOfExampleFeedbacks(_id: string): boolean {
+    for (let id of protectedIDs) {
+      if (id == _id) return true;
+    }
+    return false;
   }
 }

@@ -5,11 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TagCounter</title>
   <script src="script.js"></script>
+  <link rel="stylesheet" href="https://validator.w3.org/nu/style.css">
 </head>
-<body>
+<body style="margin: 1em;">
     <input type="text" id="link">
-    <button onclick="checkTags()">Check</button> <br>
+    <button onclick="checkTags()">Check Tags</button> 
+    <button onclick="checkW3()">Check W3</button> <br>
     <output id="output">Nichts gezählt</output>
+    <div id="w3"></div>
     <div id="hidden" hidden></div>
+    <div id="w3hidden" hidden></div>
 </body>
 </html>

@@ -35,7 +35,7 @@ function count(elements) {
   for (el in elements) {
     if (el == "META" || el == "TITLE" || el == "LINK" || el == "STYLE" || el == "SCRIPT") continue;
     if (el.length = 2 && el.search(/h\d/gi) == 0) {
-      if(countedH){
+      if (countedH) {
         continue
       }
       countedH++;
@@ -43,4 +43,17 @@ function count(elements) {
     total++;
   }
   return total;
+}
+
+async function checkW3() {
+  let w3hiddendiv = document.getElementById("w3hidden");
+  let w3div = document.getElementById("w3");
+  let link = document.getElementById("link").value;
+  w3div.innerHTML = "";
+  w3hiddendiv.innerHTML = "";
+  let query = new URLSearchParams({doc: link});
+  let newlink = "https://validator.w3.org/nu/?" + query.toString();
+  let w3Text = await fetchHtmlAsText(newlink);
+  w3hiddendiv.innerHTML = w3Text;
+  w3div.appendChild(w3hiddendiv.querySelector("#results"));
 }

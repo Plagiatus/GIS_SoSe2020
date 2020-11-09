@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TagCounter</title>
   <script src="script.js"></script>
   <link rel="stylesheet" href="https://validator.w3.org/nu/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body style="margin: 1em;">
+  <div class="input">
     <input type="text" id="link">
-    <button onclick="checkTags()">Check Tags</button> 
+    <button onclick="checkTags()">Check Tags</button>
     <button onclick="checkW3()">Check W3</button> <br>
+  </div>
+  <div class="results">
     <output id="output">Nichts gezählt</output>
     <div id="w3"></div>
-    <div id="hidden" hidden></div>
-    <div id="w3hidden" hidden></div>
+  </div>
+  <div id="hidden" hidden></div>
+  <div id="w3hidden" hidden></div>
 </body>
+
 </html>

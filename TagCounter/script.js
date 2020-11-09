@@ -26,7 +26,7 @@ async function checkTags() {
   let counts = count(elements);
   let result = document.createElement("p");
   result.classList.add("totalresult");
-  result.innerHTML = `<span class="primary">total: <span class="code">${counts[0]}</span></span> <span class="ok">ok: <span class="code">${counts[1]}</span></span> <span class="maybe">maybe: <span class="code">${counts[2]}</span></span><br><span class="once">(of ok counted as one: <span class="code">${counts[3]}</span>)</span>`;
+  result.innerHTML = `<span class="primary">total: <span class="code">${counts[0]}</span></span> <span class="ok">ok: <span class="code">${counts[1]}</span></span> <span class="maybe">maybe: <span class="code">${counts[2]}</span></span><br><span class="once">(amount of h that was only counted once: <span class="code">${counts[3]}</span>)</span>`;
   output.appendChild(result);
   output.appendChild(ul);
 }
@@ -59,10 +59,7 @@ function count(elements) {
       maybe++;
       continue;
     }
-    if (category(el) == "once"){
-      once++;
-      continue;
-    }
+    if (category(el) == "once") once++;
     if (el.length = 2 && el.search(/h\d/gi) == 0) {
       if (countedH) {
         continue

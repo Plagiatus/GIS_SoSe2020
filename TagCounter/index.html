@@ -11,6 +11,12 @@
 </head>
 
 <body style="margin: 1em;">
+	<div class="input">
+		<input type="text" id="github" placeholder="https://github.com/...." pattern="https:\/\/github\.com(\/[a-zA-Z\-_0-9]+)+\/?(.[a-zA-Z]+)?">
+		<button onclick="convertGithub()">Convert to github.io</button>
+		<button onclick="openLink()">Open</button>
+		<button onclick="checkLink()">Check</button>
+	</div>
   <div class="input">
     <input type="text" id="link">
     <button onclick="checkTags()">Check Tags</button>

@@ -72,8 +72,8 @@ function count(elements) {
 }
 
 function category(tag) {
-  let no = ["META", "TITLE", "LINK", "STYLE", "SCRIPT", "BODY", "HEADER"];
-  let maybe = ["BR", "HEAD", "MAIN", "FOOTER"];
+  let no = ["META", "TITLE", "LINK", "STYLE", "SCRIPT", "BODY", "HEAD"];
+  let maybe = ["BR", "HEADER", "MAIN", "FOOTER"];
   let once = ["H1", "H2", "H3", "H4", "H5", "H6", "H7"];
 
   if (no.includes(tag)) return "no";
@@ -93,4 +93,47 @@ async function checkW3() {
   let w3Text = await fetchHtmlAsText(newlink);
   w3hiddendiv.innerHTML = w3Text;
   w3div.appendChild(w3hiddendiv.querySelector("#results"));
+}
+
+function convertGithub(){
+	let githubComLink = document.getElementById("github");
+	if(!githubComLink.checkValidity()){
+		return;
+	}
+	let splitLink = githubComLink.value.split("/");
+	let ioLink = `https://${splitLink[3]}.github.io`;
+	for(let i = 4; i < splitLink.length; i++){
+		ioLink += "/" + splitLink[i];
+	}
+	githubComLink.value = ioLink;
+}
+
+function openLink() {
+	let link = document.getElementById("github").value;
+	if (!isGithubIO(link)) {
+		convertGithub();
+		link = document.getElementById("github").value;
+	}
+	window.open(link, "_blank");
+}
+
+function checkLink() {
+	if (!isGithubIO(document.getElementById("github").value)) {
+		convertGithub();
+	}
+	document.getElementById("link").value = document.getElementById("github").value;
+	checkBoth();
+}
+
+function checkBoth() {
+	checkTags();
+	checkW3();
+}
+
+function isGithubIO(_link){
+	console.log(_link);
+	if (_link == "") return false;
+	let url = new URL(_link);
+	if (url.hostname == "github.io") return true;
+	return false;
 }
